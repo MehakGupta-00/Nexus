@@ -42,6 +42,8 @@ College life is scattered across emails, notice boards, messaging apps, spreadsh
 
 ---
 
+**Deployed URL: https://hackathon-winner--umanggirdharvlo.replit.app**
+
 ## 🛠️ Tech Stack
 
 ### Frontend
