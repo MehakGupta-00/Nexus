@@ -13,6 +13,7 @@ import Mess from "@/pages/Mess";
 import Announcements from "@/pages/Announcements";
 import LostFound from "@/pages/LostFound";
 import Chat from "@/pages/Chat";
+import Map from "@/pages/Map";
 import NotFound from "@/pages/not-found";
 import { Loader2 } from "lucide-react";
 
@@ -43,9 +44,7 @@ function AuthenticatedApp() {
         <Route path="/rides">
           <Placeholder title="Rides" />
         </Route>
-        <Route path="/map">
-          <Placeholder title="Campus Map" />
-        </Route>
+        <Route path="/map" component={Map} />
         <Route path="/academics">
           <Placeholder title="Academic Cockpit" />
         </Route>
