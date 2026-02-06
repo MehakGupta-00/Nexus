@@ -10,11 +10,24 @@ import {
   FileText, 
   Video, 
   MessageSquare,
-  GraduationCap
+  GraduationCap,
+  MapPin,
+  Info
 } from "lucide-react";
 
+interface TimetableSlot {
+  time: string;
+  subject: string;
+  room: string;
+  type: string;
+}
+
+interface WeeklyTimetable {
+  [key: string]: TimetableSlot[];
+}
+
 export default function Academics() {
-  const timetable = {
+  const timetable: WeeklyTimetable = {
     Monday: [
       { time: "09:00 - 09:50", subject: "Data Structures", room: "L1", type: "Lecture" },
       { time: "10:00 - 10:50", subject: "Discrete Math", room: "L2", type: "Lecture" },
@@ -103,7 +116,7 @@ export default function Academics() {
                 </TabsList>
                 {days.map(day => (
                   <TabsContent key={day} value={day} className="space-y-4">
-                    {timetable[day].map((slot, i) => (
+                    {timetable[day]?.map((slot: TimetableSlot, i: number) => (
                       <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors">
                         <div className="flex flex-col items-center justify-center min-w-[100px] border-r pr-4 border-border/50">
                           <Clock className="w-4 h-4 text-muted-foreground mb-1" />
